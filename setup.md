@@ -22,8 +22,49 @@ application_name/
         └── java/
             └── com/
                 └── example/
+                    |__ config/
+                        |__ DBconnection.java
 ```
 ## create the folder like this
+
+### Step 1: Install MySQL
+
+Make sure MySQL Server is installed and running.
+
+Default MySQL port: `3306`
+
+### Step 2: Create a database
+
+Open MySQL Workbench and execute:
+
+```sql
+CREATE DATABASE college;
+
+USE college;
+```
+
+### Step 3: Create a students table
+
+```sql
+CREATE TABLE students (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    age INT,
+    department VARCHAR(50)
+);
+```
+
+### Step 4: Insert sample data
+
+```sql
+INSERT INTO students
+(name, email, age, department)
+VALUES
+('Arun', 'arun@gmail.com', 21, 'CSE'),
+('Priya', 'priya@gmail.com', 22, 'IT'),
+('Kumar', 'kumar@gmail.com', 20, 'ECE');
+```
 
 ## Add MySQL JDBC Driver
 
